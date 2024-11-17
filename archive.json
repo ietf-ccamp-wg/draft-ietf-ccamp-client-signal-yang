@@ -1,0 +1,663 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-11-17T01:12:43.451715+00:00",
+  "repo": "ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "MDU6SXNzdWU4OTU3NDAyMjM=",
+      "title": "Make references to bandwidth profiles leafrefs",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/1",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "haomianzheng"
+      ],
+      "labels": [],
+      "body": "Comment from Roque on CCAMP WG mailing list:\r\n\r\nhttps://mailarchive.ietf.org/arch/msg/ccamp/3sZ98qEpG9_dmkJyFA1aghEI3BA/\r\n\r\nImported from: https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/67\r\n",
+      "createdAt": "2021-05-19T18:13:18Z",
+      "updatedAt": "2021-05-19T18:13:18Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "MDU6SXNzdWU4OTU3NDE0MTc=",
+      "title": "Configure Access-point-type to be optical/electrical in ietf-trans-client-service/ietf-eth-tran-service",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/2",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Problem Example:\r\nWhen configuration the transparent client signals, the corresponding port can be either the optical port or the electrical port on the deivce. It would be useful to specify which type of port to be configured.\r\n\r\nRelated Draft:\r\ndraft-ietf-ccamp-client-signal-yang\r\nRelated Module:\r\nietf-trans-client-service / ietf-trans-client-svc-types\r\nietf-eth-tran-service / ietf-eth-tran-types\r\n\r\nProposal to be added in\r\nidentity access-point-type {\r\ndescription \"indicates whether it is electronic port or optical point.\";\r\n}\r\n\r\nidentity electronic-fe {\r\nbase access-point-type;\r\n}\r\n\r\nidentity electronic-ge {\r\nbase access-point-type;\r\n}\r\n\r\nidentity optical-fe {\r\nbase access-point-type;\r\n}\r\n\r\nidentity optical-ge {\r\nbase access-point-type;\r\n}\r\n\r\nExpected tree shape:\r\nCurrent (-01)\r\n+--rw src-access-ports\r\n| +--rw access-node-id? te-types:te-node-id\r\n| +--rw access-ltp-id? te-types:te-tp-id\r\n| +--rw client-signal? identityref\r\n\r\nNew\r\n+--rw src-access-ports\r\n| +--rw access-node-id? te-types:te-node-id\r\n| +--rw access-ltp-id? te-types:te-tp-id\r\n| +--rw client-signal? identityref\r\n| +--rw access-point-type? identityref\r\n\r\nImported from https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/47\r\n",
+      "createdAt": "2021-05-19T18:14:47Z",
+      "updatedAt": "2024-01-08T14:34:51Z",
+      "closedAt": "2024-01-08T14:34:51Z",
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "MDU6SXNzdWU4OTU3NDI1MDE=",
+      "title": "Prefix in draft-ietf-ccamp-client-signal-yang-01 Misalignment",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/3",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "italobusi",
+        "haomianzheng"
+      ],
+      "labels": [],
+      "body": "     +-------------+---------------------------+----------------------+\r\n     | Prefix      | YANG module               | Reference            |\r\n     +-------------+---------------------------+----------------------+\r\n     | yang        | ietf-yang-types           | [RFC6991]            |\r\n     | te-types    | ietf-te-types          |[ietf-teas-yang-te-types]|\r\n     | rt-types    | ietf-routing-types        | [RFC8294]            |\r\n     | otn-types   | ietf-otn-types     |[ietf-ccamp-otn-tunnel-model]|\r\n     | etht-types  | ietf-eth-tran-types       | This Document        |\r\n     | clntsvc     | ietf-trans-client-service | This Document        |\r\n     | ethtsvc     | ietf-eth-tran-service     | This Document        |\r\n     |clntsvc-types|ietf-trans-client-svc-types| This Document        |\r\n     +-------------+---------------------------+----------------------+\r\n\r\n| otn-types   | ietf-otn-types     |[ietf-ccamp-otn-tunnel-model]| should become\r\n| layer1-types | ietf-layer1-types  |[ietf-ccamp-layer1-typesl]|\r\n\r\nImported from https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/41\r\n",
+      "createdAt": "2021-05-19T18:16:01Z",
+      "updatedAt": "2024-01-11T15:54:56Z",
+      "closedAt": "2024-01-11T15:54:56Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "Fixed in [draft-ietf-ccamp-client-signal-yang-05](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-client-signal-yang-05)",
+          "createdAt": "2024-01-11T15:54:56Z",
+          "updatedAt": "2024-01-11T15:54:56Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "MDU6SXNzdWU4OTU3NDMzNjg=",
+      "title": "Multiplexing Format in otn-types",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/4",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "To be discussed: \r\n\r\nSo we specify the GFP-F and the GMP multiplexing in the same identity or via different identities in otn-types.yang?\r\n\r\nOption A: \r\n  identity ETH-1Gb {\r\n    base client-signal;\r\n    description\r\n      \"Client signal type of 1GbE\";\r\n  }\r\n\r\nOption B: \r\n  identity ETH-1Gb-GFPF {\r\n    base client-signal;\r\n    description\r\n      \"Client signal type of 1GbE with GFP-F\";\r\n  }\r\n\r\n  identity ETH-1Gb-GMP {\r\n    base client-signal;\r\n    description\r\n      \"Client signal type of 1GbE with GMP\";\r\n  }\r\n\r\n\r\nImported from https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/20\r\n",
+      "createdAt": "2021-05-19T18:17:03Z",
+      "updatedAt": "2021-11-30T15:04:24Z",
+      "closedAt": "2021-11-30T15:04:24Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/20#issuecomment-577491209\r\n\r\n> According to the discussion so far, it is proposed to use option A in the layer1-types. Meanwhile another parameters indicating the multiplexing would be added on the client-signal model.\r\n> The new parameter is going to be re-confirmed when updating the client-signal YANG.",
+          "createdAt": "2021-05-19T18:17:34Z",
+          "updatedAt": "2021-05-19T18:17:56Z"
+        },
+        {
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "body": "Issue close for Ethernet services\r\n\r\nA new issue #12 has been submitted for the AMP versus BMP mapping:\r\n\r\nhttps://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/20#issuecomment-477714315\r\n",
+          "createdAt": "2021-11-30T15:04:24Z",
+          "updatedAt": "2021-11-30T15:04:24Z"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "MDU6SXNzdWU5NDA3NTE1OTc=",
+      "title": "Need to clarify the topology-role",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/5",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/blob/96fbf3e2ecd8e306813716bbab6a1ae7e10715c5/ietf-eth-tran-service.yang#L637-L644\r\n\r\nIt is not clear from the description and location within the tree whether this attribute represents:\r\n\r\n1. the topology of the service (E-Line/any-to-any, E-LAN/any-to-any or E-Tree/hub-and-spoke)\r\n2. the topology of the underlay tunnels (full-mesh or hub-and-spoke)\r\n3. the role of the service end-point (any-to-any, hub/root or spoke/leaf)\r\n\r\nIn case 1 (topology of the service), this attribute belongs to the service and not to the service end-point and it provides duplicated information with the etht-svc-type attribute\r\n\r\nIn case 2 (topology of the underlay tunnels), this attribute belongs the underlay container and not to the service end-point. More discussion is also needed since the list of tunnels should anyhow be explicitly configured and more complex topologies could also be required.\r\n\r\nIn case 3 (role of the service end-point), this attribute belongs to the service end-point but more discussion is needed since the configuration of the split-horizon groups could also be used to configure E-Tree services.\r\n\r\nIn any case:\r\n\r\n- the description needs further clarification;\r\n- the option to define a enum instead of an identityref should be considered",
+      "createdAt": "2021-07-09T13:10:03Z",
+      "updatedAt": "2021-07-09T13:10:03Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 6,
+      "id": "MDU6SXNzdWU5NzU2MDA4Mjk=",
+      "title": "Default values for ETH svc-type and svc-lifecycle",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/6",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "haomianzheng"
+      ],
+      "labels": [],
+      "body": "Add default values as noted in YANG comments:\r\n\r\nhttps://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/blob/5ee88f962ddba595fb55a4b24e6fc54d5be3faa1/ietf-eth-tran-service.yang#L472-L484\r\n\r\n```\r\n     leaf etht-svc-type {\r\n      type etht-types:service-type;\r\n      default ietf-eth-tran-types:p2p-svc;\r\n      description\r\n        \"Type of ETH service (p2p, mp2mp or rmp).\";\r\n    }\r\n\r\n     leaf etht-svc-lifecycle {\r\n      type etht-types:lifecycle-status;\r\n      default etht-types:installed;\r\n      description\r\n        \"Lifecycle state of ETH service.\";\r\n    }\r\n```\r\n",
+      "createdAt": "2021-08-20T13:14:00Z",
+      "updatedAt": "2021-08-20T13:14:12Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 7,
+      "id": "I_kwDOFWB_7M4_ZjkR",
+      "title": "Definition of ETH bandwidth",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/7",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "The current ETH model defines the bandwidth as an uint64 in kilobits-per-second.\r\n\r\nThe rationale for this choise has been the fact that the IEEE floating point representation is not very user-friendly especially for a text-oriented language as YANG.\r\n\r\nOne possible issue (to be discussed) is that writing Gbps values using the kpbs units would still result in an integer number which is not that much user-friendly.\r\n\r\nA possible solution for this issue could be to represent the banwdith as a tuple (measurement unit, value).\r\n\r\nAnother possible issue (to be discussed) is that the IEEE representation is widely used in underlying TE data plane and control plane and the conversion between integer/decimal and IEEE floating point representations is not lossless: translating a value from integer/decimal to IEEE floating point and back to integer/decimal would result in a different integer/decimal value.\r\n\r\nIt the lack of lossless translation really a problem?\r\n\r\nSince with NMDA, configuration and reported state are separated, the configured and reported bandwidth values might be slightly different.\r\n\r\nIf the lack of lossless translation is a big issue, a possible solution could be to encode ETH bandwidth as a triplet of (value, measuring unit and IEEE floating point). The client can choose to configure the floating point or the rate. The server can always report the floating point (as the actual value implemented in the underlying TE data and control planes) and, when possible, it can report the actual value/unit (e.g., the value configured by the client if consistent with the actual value in the underlying TE data and control plane).\r\n\r\nImported from: https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/4\r\n",
+      "createdAt": "2021-11-25T14:34:45Z",
+      "updatedAt": "2021-11-25T14:37:14Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOFWB_7M4_Zkk2",
+      "title": "Resilience Configuration on ietf-eth-tran-service",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/8",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "A few placeholder on resilience configuration will be added into the current ietf-eth-tran-service, which will appear in draft-zheng-ccamp-client-signal-yang-04. Attributes to be configure include the WTR, hold-off-timer, revert/non-revert and so on...\r\n\r\nAn open issue would be where to configure the resilience attributes. A few potential places include:\r\n\r\nResilience on the access port: LAG/DRNI/MC-LAG information;\r\nResilience on the service instance, usually shown on Pseudowire;\r\nResilience on the L2 tunnel, which is MPLS-TP tunnel;\r\nResilience on the L1 tunnel, which is OTN/SDH tunnel;\r\nCurrently, item 4 is supported by te-tunnel model.\r\n\r\nIn practice, 2 and 3 are usually not implemented together. On the perspective of service protection, feasible configuration would be 1+2+4 or 1+3+4(all optional) .\r\n\r\nWill need to add the resilience information for 1/2/3 in ietf-eth-tran-service.\r\n\r\nImported from: https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/31",
+      "createdAt": "2021-11-25T14:38:29Z",
+      "updatedAt": "2021-11-25T14:38:29Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOFWB_7M4_Zk42",
+      "title": "Signal Aggregation in ietf-trans-client-service",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/9",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Problem Example: STM-1 needs a bandwidth of 155M, while the finest ODUk can provide 1.25G underlay Tunnel (ODU0). The signal can be aggregated to make better use of the tunnnel, therefore when the signal is configured to the tunnel, it can be stated as 'aggregated' or 'non-aggregated'.\r\n\r\nRelated Draft: draft-ietf-ccamp-client-signal-yang\r\nRelated Module: ietf-trans-client-service / ietf-trans-client-svc-types\r\n\r\nExample Proposal to be added in ietf-trans-client-svc-types\r\n\r\nidentity work-mode-type {\r\n}\r\n\r\nidentity odu1-aggregate {\r\nbase work-mode-type;\r\n}\r\n\r\nidentity odu1-not-aggregate {\r\nbase work-mode-type;\r\n}\r\n\r\nExpected tree shape:\r\nCurrent (-01)\r\n+--rw src-access-ports\r\n| +--rw access-node-id? te-types:te-node-id\r\n| +--rw access-ltp-id? te-types:te-tp-id\r\n| +--rw client-signal? identityref\r\n\r\nNew\r\n+--rw src-access-ports\r\n| +--rw access-node-id? te-types:te-node-id\r\n| +--rw access-ltp-id? te-types:te-tp-id\r\n| +--rw client-signal? identityref\r\n| +--rw work-mode? identityref\r\n\r\nImported from: https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/46\r\n",
+      "createdAt": "2021-11-25T14:39:39Z",
+      "updatedAt": "2021-11-25T14:39:39Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOFWB_7M4_ZlMT",
+      "title": "Support of Resource Reservation for operation need",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/10",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Problem: operators need to provide the customer some services for 'trial' which will be temporarily active for some duration. After that the configuration should not be directly removed, as it must be re-open once the customer finish a payment. So a mechanism of resource reservation would be needed for operation. \r\n\r\nRelated Draft:\r\ndraft-ietf-ccamp-client-signal-yang\r\nRelated Module:\r\nietf-trans-client-service / ietf-trans-client-svc-types\r\nietf-eth-tran-service / ietf-eth-tran-types\r\n\r\nProposal for adding the following grouping during configuration: \r\n  grouping resource-reservation-grouping {\r\n    description\r\n      \"Use to control the flow of client service\";\r\n\r\n    container resource-reservation {\r\n      leaf resource-activated-without-reservation {\r\n        type boolean;\r\n      }\r\n\r\n      leaf resource-reserved-end-time {\r\n        must \"resource-activated-without-reservation == false\";\r\n        type yang:date-and-time;\r\n      }\r\n    }\r\n  }\r\n\r\n\r\n\r\nExpected tree shape:\r\nCurrent (-01)\r\nnone. \r\n\r\nNew\r\n        +--rw resource-reservation\r\n        |  +--rw resource-activated-without-reservation?        boolean\r\n        |  +--rw resource-reserved-end-time?          yang:date-and-time\r\n\r\nImported from: https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/48\r\n",
+      "createdAt": "2021-11-25T14:40:46Z",
+      "updatedAt": "2024-01-08T14:34:52Z",
+      "closedAt": "2024-01-08T14:34:52Z",
+      "comments": []
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOFWB_7M4_ZlZm",
+      "title": "Tag re-naming consideration for ietf-eth-tran-service",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/11",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Now the tag representation in ietf-eth-tran-service is in a relative style, outer-tag, second-tag (as the second from outer)... \r\nIn practice the configuration is more straghtforward to use 'c-vlan' and 's-vlan'... so it is proposed to rename the tag representation to c-vlan and s-vlan. \r\n\r\nFor IEEE 802.1 Ethernet, the configuration of the current 'outer-tag' should be c-vlan information; and there is no 'second-tag' configuration;  \r\nFor QinQ Ethernet, the configuration of the current 'outer-tag' should be s-vlan, while the 'second-tag' should be c-vlan. \r\n\r\nImported from: https://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/53\r\n",
+      "createdAt": "2021-11-25T14:41:41Z",
+      "updatedAt": "2021-11-25T14:41:41Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 12,
+      "id": "I_kwDOFWB_7M4_nlmD",
+      "title": "Need to configure AMP and BMP mapping",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/12",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "For some client signals, there is a need to configure whether the mapping used is AMP or BMP:\r\n\r\nhttps://github.com/haomianzheng/IETF-ACTN-YANG-Model/issues/20#issuecomment-477714315\r\n\r\nIf the two PEs are under different PNCs, the MDSC needs to coordinate this configuration between the two PNCs\r\n",
+      "createdAt": "2021-11-30T15:03:59Z",
+      "updatedAt": "2021-11-30T15:03:59Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 13,
+      "id": "I_kwDOFWB_7M4_owE_",
+      "title": "Delegation of tunnel configuration in single-domain scenarios",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/13",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "In a single-domain scenario there are two options possible:\r\n\r\n1) MDSC selects the PE-PE tunnel\r\n   step 1: MDSC requests the PNC to setup an e2e tunnel\r\n   step 2: MDSC requests the PNC to setup a client signal between A and B using the tunnel setup at step 1\r\n\r\n2) MDSC delegates the PNC to select the PE-PE tunnel\r\n   step 1: MDSC requests the PNC to setup a client signal between A and B without specifying any underlay tunnel\r\n\r\n```\r\n            |                                                 |\r\n            | ------------------------------------------------|\r\n          //|/                                                |\\\\\\\\\r\n        //  |                                                 |    \\\\\r\n       | +--+-+    +---+  +---+            +---+   +---+   +--+-+    |\r\n      |  | PE +----+ P +--+ P +------------+ P +---+ P +---+ PE |     |\r\n       | +----+    +---+  +---+            +---+   +---+   +----+    |\r\n        \\\\                                                         //\r\n          \\\\\\\\                                                /////\r\n              ------------------------------------------------\r\n\r\n```\r\n\r\nIn the second option:\r\n- need to add some information to constraint how the PNC selects the PE-PE tunnel (e.g., protection, latency, ...)\r\n- for ethernet services, also the configuration of VLAN operations can be delegated to the PNC. To further investigate if there is a need to specify some VLAN operations constraints",
+      "createdAt": "2021-11-30T20:29:46Z",
+      "updatedAt": "2021-11-30T20:29:57Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 14,
+      "id": "I_kwDOFWB_7M5GBhjI",
+      "title": "\u8054\u901a\u76f8\u5173\u6570\u636e\u5220\u9664",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/14",
+      "state": "CLOSED",
+      "author": "syclh",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "\u60a8\u597d\uff0c\u6211\u662f\u8054\u901a\u667a\u6167\u5b89\u5168\u654f\u611f\u4fe1\u606f\u76d1\u6d4b\u5904\u7f6e\u7ec4\u7684\uff0c\u60a8\u5728Github\u5e73\u53f0\u662f\u4e0a\u4f20\u7684\u4fe1\u606f\u6d89\u53ca\u5230\u8054\u901a\u5185\u90e8\u654f\u611f\u6570\u636e\uff0c\u5e0c\u671b\u60a8\u8fd9\u8fb9\u80fd\u5c06\u76f8\u5173\u4fe1\u606f\u4e0b\u7ebf\u5220\u9664\uff0cURL\u5982\u4e0b\uff1a\r\nhttps://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/blob/10692fd3243c176babc34e1a431bc2df8e9e77de/draft-ietf-ccamp-client-signal-yang.xml",
+      "createdAt": "2022-03-21T02:23:27Z",
+      "updatedAt": "2024-01-09T14:08:41Z",
+      "closedAt": "2024-01-09T14:08:41Z",
+      "comments": []
+    },
+    {
+      "number": 15,
+      "id": "I_kwDOFWB_7M5pyHqd",
+      "title": "Need to update the reference to RFC8776-bis",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/15",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "The references to RFC8776 should be updated with a reference to RFC8776-bis (i.e., [I-D.ietf-teas-rfc8776-update]) at least when there is a dependency on the updates to RFC8776 provided in RFC8776-bis\r\n\r\nSee: https://mailarchive.ietf.org/arch/msg/teas/1XFx6vOG-A0iCkuv5DzVVft63o0/\r\n",
+      "createdAt": "2023-06-26T13:08:00Z",
+      "updatedAt": "2024-01-26T23:21:46Z",
+      "closedAt": "2024-01-26T23:21:46Z",
+      "comments": []
+    },
+    {
+      "number": 17,
+      "id": "I_kwDOFWB_7M50-0Pk",
+      "title": "Refresh the affiliaty of authors",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/17",
+      "state": "CLOSED",
+      "author": "YuChaode",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Since Sedona was acquired by Cisco several years ago, so is it better to change Anton's affiliaty to Cisco?",
+      "createdAt": "2023-10-26T03:17:21Z",
+      "updatedAt": "2023-12-19T03:03:48Z",
+      "closedAt": "2023-12-19T03:03:48Z",
+      "comments": [
+        {
+          "author": "YuChaode",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I think Xufeng's affiliaty also needs to be updated.",
+          "createdAt": "2023-10-26T03:22:11Z",
+          "updatedAt": "2023-10-26T03:22:11Z"
+        },
+        {
+          "author": "YuChaode",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "the current version on IETF is based on the 09 version, and all the affiliaty of authors are refreshed.",
+          "createdAt": "2023-12-19T03:03:48Z",
+          "updatedAt": "2023-12-19T03:03:48Z"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "id": "I_kwDOFWB_7M56Ym0_",
+      "title": "Do we need a service path computation? And how to module the service path computation?",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/20",
+      "state": "OPEN",
+      "author": "YuChaode",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In the IETF meeting 118, Chaode raised an open discussion point for service path computation.\r\nThis requirement comes from some operators who want to do the service configuration from a topdowm approach while the current path computation is considered to be bottomup approach.\r\nwe had a meeting on 6th Dec, together with Sergio, Dieter and Italo. And we agreed that it could be a new RPC defined in client signal model. (meeting minute can be found in this link: https://mailarchive.ietf.org/arch/msg/teas/oeKWrnjmwTYIfn8ZDEbc0IlUu6w/)\r\n\r\nThe objectives of this service computation RPC would like to deal with:\r\n1. Path computation from a topdown perspective. User can do the service path computation by specifying the source & destination access port. The PNC can return all the underlay tunnels' path.\r\n2. Specifying multiple layers' comstraint. User can specify path constraint on ODU layers and OCH layers with multiple manners, includes specifying node, ltp, label, tunnel, path, srlg included/excluded.\r\n3. Path computation result Reference in service provisioning. The client can easily reference the service path computation result by path id.\r\n(more capabilities could be added...)\r\n\r\nCurrently\uff0c Chaode has provided a preliminary RPC model which still needs to be furthur discussed.\r\n[ietf-trans-client-service@2023-12-19.zip](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/files/13747598/ietf-trans-client-service%402023-12-19.zip)\r\n",
+      "createdAt": "2023-12-22T02:12:28Z",
+      "updatedAt": "2024-01-18T11:07:39Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "YuChaode",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "We had a discussion on 17th Jan, 2024. I furthurly introduct the motivation and requirements of service path computation. The slide is attached here.\r\n[Material\u2014\u201420240117.pptx](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/files/13975718/Material.20240117.pptx)\r\n",
+          "createdAt": "2024-01-18T11:07:38Z",
+          "updatedAt": "2024-01-18T11:07:38Z"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "id": "I_kwDOFWB_7M57hYkj",
+      "title": "Update I-D",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/22",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "I would suggest the following additional changes beyond the simple translation to kramdown as part of this PR:\r\n1) Align the order to the sections with the template\r\n   - Implementation Status\r\n   - Manageability Considerations\r\n   - Security Considerations\r\n   - IANA Considerations\r\n2) Resolve 'lines too long' issues\r\n   - check the line lengths of YANG code with pyang\r\n   - wraps the lines in the the YANG tree files using RFC8792 \r\n3) change the dates of the YANG files to avoid clashes with the published YANG files\r\n4) replace references to RFC8776 with references to RFC8776-bis I-D: see #15 \r\n\r\n_Originally posted by @italobusi in https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/pull/21#pullrequestreview-1809668941_\r\n",
+      "createdAt": "2024-01-09T13:12:28Z",
+      "updatedAt": "2024-01-26T23:21:45Z",
+      "closedAt": "2024-01-26T23:21:45Z",
+      "comments": []
+    },
+    {
+      "number": 23,
+      "id": "I_kwDOFWB_7M57lpwK",
+      "title": "A switch control on the service's traffic",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/23",
+      "state": "OPEN",
+      "author": "YuChaode",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The issue was raised when discussing configuration capabilities of inventory module.\r\nThe scenario is:\r\nthe operators can choose to shutdown the layser of tributary ports instead of deleting/deactivating service,  if the user failed to renew the private line service. \r\nIf the operators delete the service, the underlay resource would not be reserved for this user, then would be posssibe to be used by some other services. If the user succeed in renewing his service, the operator cannot gurantee to recover the service at once.\r\n\r\nthe traditional approach is the operators can shut down the laser of  tributary port, but there is a suggestion to do it on the service level, and let the dmain controller choose how to do that. (Sounds like a intend based interface)\r\n\r\n",
+      "createdAt": "2024-01-10T02:24:07Z",
+      "updatedAt": "2024-01-10T02:24:07Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 25,
+      "id": "I_kwDOFWB_7M5_NtPA",
+      "title": "Add informative reference to RFC8792",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/25",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [
+        "documentation"
+      ],
+      "body": "",
+      "createdAt": "2024-02-14T12:58:52Z",
+      "updatedAt": "2024-02-14T12:58:53Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 26,
+      "id": "I_kwDOFWB_7M6eVoWa",
+      "title": "Clean-up github repository",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/issues/26",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [
+        "documentation"
+      ],
+      "body": "The draft version in github is aligned with the -11 version and does not include the changes done in the latest version uploaded to datatracker\r\n\r\nNeed to incorporate these changes in github to avoid loosing them in the next draft update\r\n\r\nNeed also to change the name of the draft in markdown:\r\n\r\nc/draft-ietf-ccamp-client-signal-yang-11/draft-ietf-ccamp-client-signal-yang-latest/\r\n",
+      "createdAt": "2024-11-13T18:52:17Z",
+      "updatedAt": "2024-11-13T19:04:21Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 16,
+      "id": "PR_kwDOFWB_7M5dgEbC",
+      "title": "Update for IETF118",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/pull/16",
+      "state": "CLOSED",
+      "author": "YuChaode",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Extend these attributes in both client signal and ethernet service module:\r\nuser-label\r\nnode-uri\r\nltp-uri\r\npm-state\r\nerror-info\r\nalarm-threshold",
+      "createdAt": "2023-10-23T08:18:18Z",
+      "updatedAt": "2023-12-11T14:55:04Z",
+      "baseRepository": "ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang",
+      "baseRefName": "main",
+      "baseRefOid": "10692fd3243c176babc34e1a431bc2df8e9e77de",
+      "headRepository": "YuChaode/draft-ietf-ccamp-client-signal-yang",
+      "headRefName": "main",
+      "headRefOid": "dbf54f2506f5885a97203a333c9493b3c3ffec92",
+      "closedAt": "2023-12-11T14:55:04Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOFWB_7M5iNiGD",
+      "title": "Introduce the changes of IETF meeting 118 and changed related text based on 09 version",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/pull/18",
+      "state": "MERGED",
+      "author": "YuChaode",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-12-18T03:44:17Z",
+      "updatedAt": "2023-12-19T01:04:03Z",
+      "baseRepository": "ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang",
+      "baseRefName": "main",
+      "baseRefOid": "10692fd3243c176babc34e1a431bc2df8e9e77de",
+      "headRepository": "YuChaode/draft-ietf-ccamp-client-signal-yang",
+      "headRefName": "main",
+      "headRefOid": "9004c6243f87c4b41a1a28688b96fecc0df4e700",
+      "closedAt": "2023-12-19T01:04:03Z",
+      "mergedAt": "2023-12-19T01:04:03Z",
+      "mergedBy": "YuChaode",
+      "mergeCommit": {
+        "oid": "0bc7f57f6f80dde9e5c5b0f23f3d2c70b0eae8b2"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFWB_7M5qe9Hp",
+          "commit": {
+            "abbreviatedOid": "deb9261"
+          },
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-12-18T10:36:10Z",
+          "updatedAt": "2023-12-18T10:36:10Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "id": "PR_kwDOFWB_7M5iU3gA",
+      "title": "Fix a typo issue \"shreshold\" > \"threshold\"",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/pull/19",
+      "state": "MERGED",
+      "author": "YuChaode",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-12-19T03:02:45Z",
+      "updatedAt": "2023-12-21T07:21:05Z",
+      "baseRepository": "ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang",
+      "baseRefName": "main",
+      "baseRefOid": "0bc7f57f6f80dde9e5c5b0f23f3d2c70b0eae8b2",
+      "headRepository": "YuChaode/draft-ietf-ccamp-client-signal-yang",
+      "headRefName": "main",
+      "headRefOid": "13678973febed5d62c66d26301537392644be5e0",
+      "closedAt": "2023-12-21T07:21:05Z",
+      "mergedAt": "2023-12-21T07:21:05Z",
+      "mergedBy": "haomianzheng",
+      "mergeCommit": {
+        "oid": "4d05526cb8305ecd18a0c655437a079497ce8340"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 21,
+      "id": "PR_kwDOFWB_7M5jgDDf",
+      "title": "I-D translated to kramdown",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/pull/21",
+      "state": "MERGED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "I-D translated to kramdown\r\n\r\nComparison between this version and the latest published version (draft-ietf-ccamp-client-signal-yang-11):\r\n\r\nhttps://author-tools.ietf.org/diff?doc_1=draft-ietf-ccamp-client-signal-yang&url_2=https://raw.githubusercontent.com/italobusi/draft-ietf-ccamp-client-signal-yang/kramdown/draft-ietf-ccamp-client-signal-yang.txt\r\n",
+      "createdAt": "2024-01-08T17:24:20Z",
+      "updatedAt": "2024-01-09T01:21:14Z",
+      "baseRepository": "ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang",
+      "baseRefName": "main",
+      "baseRefOid": "108602570aeebb797ce136292278874f73d626c8",
+      "headRepository": "italobusi/draft-ietf-ccamp-client-signal-yang",
+      "headRefName": "kramdown",
+      "headRefOid": "325d6b158680665e4013ec7e266649f1932f7c44",
+      "closedAt": "2024-01-09T01:21:14Z",
+      "mergedAt": "2024-01-09T01:21:14Z",
+      "mergedBy": "YuChaode",
+      "mergeCommit": {
+        "oid": "fa92bebe8fdd6319b6b9389e8912fbff900b9e4e"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFWB_7M5r3VtN",
+          "commit": {
+            "abbreviatedOid": "325d6b1"
+          },
+          "author": "italobusi",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "Once verified that the translation has been successful, I would suggest the following additional changes beyond the simple translation to kramdown as part of this PR:\r\n1) Align the order to the sections with the template\r\n   - Implementation Status\r\n   - Manageability Considerations\r\n   - Security Considerations\r\n   - IANA Considerations\r\n2) Resolve 'lines too long' issues\r\n   - check the line lengths of YANG code with pyang\r\n   - wraps the lines in the the YANG tree files using RFC8792 \r\n3) change the dates of the YANG files to avoid clashes with the published YANG files\r\n4) replace references to RFC8776 with references to RFC8776-bis I-D",
+          "createdAt": "2024-01-08T17:29:51Z",
+          "updatedAt": "2024-01-08T17:31:47Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "id": "PR_kwDOFWB_7M5j3jUT",
+      "title": "I-D Updates",
+      "url": "https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/pull/24",
+      "state": "MERGED",
+      "author": "italobusi",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "I-D updates: fix #22 \r\n\r\n1) Align the order to the sections with the template\r\n   - Implementation Status\r\n   - Manageability Considerations\r\n   - Security Considerations\r\n   - IANA Considerations\r\n2) Resolve 'lines too long' issues\r\n   - check the line lengths of YANG code with pyang\r\n   - wraps the lines in the the YANG tree files using RFC8792 \r\n3) clean-up YANG models\r\n    - change the dates of the YANG files to avoid clashes with the published YANG files\r\n    - clean-up YANG prefixes\r\n    - align with RFC8407 guidelines\r\n4) replace references to RFC8776 with references to RFC8776-bis I-D: fix #15 \r\n5) moved Francesco Lazzeri to the acknowledgement section\r\n",
+      "createdAt": "2024-01-11T23:27:40Z",
+      "updatedAt": "2024-01-26T23:21:44Z",
+      "baseRepository": "ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang",
+      "baseRefName": "main",
+      "baseRefOid": "fa92bebe8fdd6319b6b9389e8912fbff900b9e4e",
+      "headRepository": "italobusi/draft-ietf-ccamp-client-signal-yang",
+      "headRefName": "kramdown",
+      "headRefOid": "27319ffda80f22c7d18420826ca89165626ea5f0",
+      "closedAt": "2024-01-26T23:21:44Z",
+      "mergedAt": "2024-01-26T23:21:44Z",
+      "mergedBy": "italobusi",
+      "mergeCommit": {
+        "oid": "edc682779b664a9c9c69e1000be8b92bef443a4c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFWB_7M5tRLVz",
+          "commit": {
+            "abbreviatedOid": "ba4ce4b"
+          },
+          "author": "aguoietf",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-19T16:36:33Z",
+          "updatedAt": "2024-01-19T16:36:33Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOFWB_7M5tiasE",
+          "commit": {
+            "abbreviatedOid": "ba4ce4b"
+          },
+          "author": "YuChaode",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-23T02:06:05Z",
+          "updatedAt": "2024-01-23T02:06:05Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOFWB_7M5uCUHm",
+          "commit": {
+            "abbreviatedOid": "ba4ce4b"
+          },
+          "author": "sergiobelotti",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-26T16:34:28Z",
+          "updatedAt": "2024-01-26T16:34:28Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
