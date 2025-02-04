@@ -1,6 +1,6 @@
 # A YANG Data Model for Transport Network Client Signals
 
-This is the working area for the IETF [CCAMP Working Group](https://datatracker.ietf.org/wg/ccamp/documents/) Internet-Draft, "A YANG Data Model for Transport Network Client Signals".
+This is the working area for the IETF [CCAMP Working Group](https://datatracker.ietf.org/group/ccamp/documents/) Internet-Draft, "A YANG Data Model for Transport Network Client Signals".
 
 * [Editor's Copy](https://ietf-ccamp-wg.github.io/draft-ietf-ccamp-client-signal-yang/#go.draft-ietf-ccamp-client-signal-yang.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-ccamp-client-signal-yang)
@@ -11,7 +11,7 @@ This is the working area for the IETF [CCAMP Working Group](https://datatracker.
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/blob//CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-client-signal-yang/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
