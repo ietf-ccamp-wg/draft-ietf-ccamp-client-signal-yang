@@ -30,7 +30,6 @@ author:
     street: H1 XiliuBeipo Village, Songshan Lake
     city: Dongguan
     region: Guangdong
-    code:
     country: China
     email: zhenghaomian@huawei.com
   -
