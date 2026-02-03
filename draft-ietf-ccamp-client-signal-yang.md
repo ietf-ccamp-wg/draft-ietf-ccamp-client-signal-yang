@@ -633,7 +633,7 @@ messages.
 ## YANG Tree for Ethernet Service
 
 ~~~~ ascii-art
-{::include ./ietf-eth-tran-service-fold.tree}
+{::include-fold ./ietf-eth-tran-service.tree}
 ~~~~
 {: #fig-eth-svc-tree artwork-name="ietf-eth-tran-service-fold.tree"}
 
@@ -642,7 +642,7 @@ messages.
 ## YANG Tree for other Transport Network Client Signal Model
 
 ~~~~ ascii-art
-{::include ./ietf-trans-client-service.tree}
+{::include-fold ./ietf-trans-client-service.tree}
 ~~~~
 {: #fig-cbr-svc-tree artwork-name="ietf-trans-client-service.tree"}
 
