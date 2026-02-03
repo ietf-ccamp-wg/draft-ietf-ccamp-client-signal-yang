@@ -819,8 +819,8 @@ Table of Contents
            |  |        |     |  +--rw bandwidth-profile-name?   leafref
            |  |        |     +--:(value)
            |  |        |        +--rw bandwidth-profile-type?
-           |  |        |        |       etht-types:bandwidth-profile-ty\
-   pe
+           |  |        |        |       etht-types:bandwidth-profile-\
+                                                                    type
            |  |        |        +--rw CIR?                      uint64
            |  |        |        +--rw CBS?                      uint64
            |  |        |        +--rw EIR?                      uint64
