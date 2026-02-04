@@ -5,14 +5,14 @@
 CCAMP Working Group                                             H. Zheng
 Internet-Draft                                       Huawei Technologies
 Intended status: Standards Track                                  A. Guo
-Expires: 7 August 2026                                         Futurewei
+Expires: 8 August 2026                                         Futurewei
                                                                  I. Busi
                                                      Huawei Technologies
                                                               A. Snitser
                                                                    Cisco
                                                                    C. Yu
                                                      Huawei Technologies
-                                                         3 February 2026
+                                                         4 February 2026
 
 
          A YANG Data Model for Transport Network Client Signals
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 August 2026.
+   This Internet-Draft will expire on 8 August 2026.
 
 Copyright Notice
 
